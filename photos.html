@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Koliland photos</title>
+  </head>
+  <body>
+    <h1>Koliland photos</h1>
+    <div id="gallery">
+      <img src="koliland1.jpg" alt="Photo 1">
+      <img src="koliland2.jpg" alt="Photo 2">
+      <img src="koliland3.jpg" alt="Photo 3">
+      <img src="koliland4.jpg" alt="Photo 4">
+      <img src="koliland5.jpg" alt="Photo 5">
+    </div>
+    <script>
+      var gallery = document.getElementById("gallery");
+      var images = gallery.getElementsByTagName("img");
+      var current = 0;
+
+      function nextImage() {
+        images[current].style.display = "none";
+        current = (current + 1) % images.length;
+        images[current].style.display = "block";
+      }
+
+      setInterval(nextImage, 5000);
+    </script>
+  </body>
+</html>
